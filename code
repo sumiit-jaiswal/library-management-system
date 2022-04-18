@@ -58,6 +58,7 @@ int main(){
             printf("\n No of books in library : %d\n", keepcount);
             break;
          case 4:
+         printf("\nsee you again\n");
             j=4;
       }
    }
