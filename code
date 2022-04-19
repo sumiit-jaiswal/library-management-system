@@ -96,7 +96,7 @@ int main()
          // TO EXIT FROM SYSTEM
       case 5:
          printf("\nSee you again\n");
-         j = 10;
+         exit(0);
       }
    }
    return 0;
