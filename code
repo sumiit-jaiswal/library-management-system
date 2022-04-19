@@ -5,14 +5,14 @@
 struct library{
    char bookname[50];
    char author[50];
-   int noofpages;
+   int bookid;
    float price;
 };
 int main(){
     system("cls");
            printf("project made by SUMIT JAISWAL(2K21/B17/58)\n");
        printf("                RISHIT SAINI (2K21/B17/46)\n");
-       printf("\npresented to respected PRIYA MA'AM (Department of software engg.)\n");
+       printf("\nPresented to respected Ms. PRIYA MA'AM (Department of software engg.)\n");
        printf("\n");
        printf("WELCOME TO LIBRARY MANAGEMENT SYSTEM\n");
        printf("**************************************\n");
@@ -20,13 +20,14 @@ int main(){
    char bookname[30];
    int i,j, keepcount;
    i=j=keepcount = 0;
-   while(j!=4){
+   while(j!=10){
 
-       printf("\nyou can do the following operation\n");
-      printf("\n1. Add book information\n");
+       printf("\nYou can do the following operation\n");
+      printf("1. Add book information\n");
       printf("2. Display book information\n");
-      printf("3. no of books in the library\n");
-      printf("4. Exit");
+      printf("3. No of books in the library\n");
+      printf("4. To find any book\n");
+      printf("5. Exit\n");
       printf ("\n\nEnter one of the above : ");
       scanf("%d",&j);
       switch (j){
@@ -36,8 +37,8 @@ int main(){
             scanf ("%s",lib[i].bookname);
             printf ("Enter author name = ");
             scanf ("%s",lib[i].author);
-            printf ("Enter pages = ");
-            scanf ("%d",&lib[i].noofpages);
+            printf ("Enter book id = ");
+            scanf ("%d",&lib[i].bookid);
             printf ("Enter price = ");
              scanf ("%f",&lib[i].price);
              printf("\n");
@@ -48,18 +49,38 @@ int main(){
             printf("you have entered the following information\n");
             for(i=0; i<keepcount; i++){
                 int k=i+1;
-               printf ("\n%d. book name = %s\n",k,lib[i].bookname);
-               printf ("\t author name = %s\n",lib[i].author);
-               printf ("\t pages = %d\n",lib[i].noofpages);
-               printf ("\t price = %f\n\n",lib[i].price);
+               printf ("\t%d. Book name = %s\n",k,lib[i].bookname);
+               printf ("\t Author name = %s\n",lib[i].author);
+               printf ("\t Book id = %d\n",lib[i].bookid);
+               printf ("\t Price = %f\n\n",lib[i].price);
             }
             break;
          case 3:
             printf("\n No of books in library : %d\n", keepcount);
             break;
-         case 4:
+           
+            case 4:
+            printf("\nEnter Book id to find the book: ");
+            int b;
+            scanf("%d",&b);
+
+            for(i=0;i<keepcount;i++)
+            {
+            if(b==lib[i].bookid)
+            { printf ("\tBook name = %s\n",lib[i].bookname);
+               printf ("\t Author name = %s\n",lib[i].author);
+               printf ("\t Book id = %d\n",lib[i].bookid);
+               printf ("\t Price = %f\n\n",lib[i].price); 
+            }
+             else
+             printf("\nSorry, Book not found\n");
+             break;
+            }
+            break;
+
+         case 5:
          printf("\nsee you again\n");
-            j=4;
+            j=10;
       }
    }
    return 0;
