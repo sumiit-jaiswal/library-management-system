@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-#include <string.h>
 struct library
 {
    char bookname[50];
@@ -36,7 +35,7 @@ int main()
       scanf("%d", &j);
       switch (j)
       {
-      /* Add book */
+      // TO ADD A BOOK IN LIBRARY
       case 1:
          printf("Enter book name = ");
          scanf("%s", lib[i].bookname);
@@ -50,6 +49,8 @@ int main()
          keepcount++;
          i++;
          break;
+
+         // TO DISPLAY ALL BOOKS IN LIBRARY
       case 2:
          printf("you have entered the following information\n");
          for (i = 0; i < keepcount; i++)
@@ -61,15 +62,18 @@ int main()
             printf("\t Price = %f\n\n", lib[i].price);
          }
          break;
+
+         // TO SHOW TOTAL NO OF BOOKS IN LIBRARY
       case 3:
          printf("\n No of books in library : %d\n", keepcount);
          break;
+
+         // TO FIND A BOOK BY BOOK ID
 
       case 4:
          printf("\nEnter Book id to find the book: ");
          int b;
          scanf("%d", &b);
-         int c = b;
 
          for (i = 0; i < keepcount; i++)
          {
@@ -79,16 +83,17 @@ int main()
                printf("\t Author name = %s\n", lib[i].author);
                printf("\t Book id = %d\n", lib[i].bookid);
                printf("\t Price = %f\n\n", lib[i].price);
-               b++;
+               b = 0;
             }
          }
-         if (c == b)
+         if (b != 0)
          {
             printf("\n\nSorry, Book not found!!\n");
          }
 
          break;
 
+         // TO EXIT FROM SYSTEM
       case 5:
          printf("\nSee you again\n");
          j = 10;
