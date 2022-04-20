@@ -11,7 +11,7 @@ struct library
 int main()
 {
    system("cls");
-   printf("project made by SUMIT JAISWAL(2K21/B17/58)\n");
+   printf("Project made by SUMIT JAISWAL(2K21/B17/58)\n");
    printf("                RISHIT SAINI (2K21/B17/46)\n");
    printf("\nPresented to respected Ms. PRIYA MA'AM (Department of software engg.)\n");
    printf("\n");
@@ -19,7 +19,6 @@ int main()
    printf("**************************************\n");
 
    struct library lib[100];
-   char bookname[30];
    int i, j, keepcount;
    i = j = keepcount = 0;
    while (j != 10)
@@ -52,7 +51,7 @@ int main()
 
          // TO DISPLAY ALL BOOKS IN LIBRARY
       case 2:
-         printf("you have entered the following information\n");
+         printf("You have entered the following information\n");
          for (i = 0; i < keepcount; i++)
          {
             int k = i + 1;
@@ -97,6 +96,8 @@ int main()
       case 5:
          printf("\nSee you again\n");
          exit(0);
+      default:
+         printf("\n\tInvalid Command\n");
       }
    }
    return 0;
